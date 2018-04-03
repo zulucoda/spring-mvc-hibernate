@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zulucoda - Alfa Romeo Cars</title>
+
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"
+    />
+
+</head>
+<body>
+
+    <div class="container">
+        <div th:if="${not #lists.isEmpty(products)}">
+            <h2>Alfa Romeos Products</h2>
+            <table class="table tables-stripped">
+                <tr>
+                    <td>Id</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Image URL</td>
+                </tr>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.imageUrl}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
