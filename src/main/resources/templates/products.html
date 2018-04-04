@@ -25,14 +25,14 @@
                     <td>Description</td>
                     <td>Price</td>
                     <td>Image URL</td>
-                    <td>Edit</td>
+                    <td>View</td>
                 </tr>
                 <tr th:each="product : ${products}">
                     <td th:text="${product.id}"></td>
                     <td th:text="${product.description}"></td>
                     <td th:text="${product.price}"></td>
                     <td th:text="${product.imageUrl}"></td>
-                    <td><a th:href="${'/product/' + product.id}">edit</a></td>
+                    <td><a th:href="${'/product/' + product.id}">view</a></td>
                 </tr>
             </table>
         </div>

@@ -21,12 +21,14 @@
             <div class="col-sm-12"><h1>Alfa Romeo Product Display</h1></div>
         </div>
 
+        <form>
+
             <div class="row">
                 <div class="col-sm-3">
                     <label>Description:</label>
                 </div>
                 <div class="col-sm-9">
-                    <input readonly class="form-control" th:value="${product.description}">
+                    <input class="form-control" th:value="${product.description}">
                 </div>
             </div>
             <div class="row">
@@ -34,7 +36,7 @@
                     <label>Price:</label>
                 </div>
                 <div class="col-sm-9">
-                    <input readonly class="form-control" th:value="${product.price}">
+                    <input class="form-control" th:value="${product.price}">
                 </div>
             </div>
             <div class="row">
@@ -42,10 +44,17 @@
                     <label>image url:</label>
                 </div>
                 <div class="col-sm-9">
-                    <input readonly class="form-control" th:value="${product.imageUrl}">
+                    <input class="form-control" th:value="${product.imageUrl}">
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-sm-3">
+                    <input type="submit" value="Save" />
+                </div>
+            </div>
+
+        </form>
     </div>
 
 </body>

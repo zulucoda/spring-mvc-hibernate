@@ -11,4 +11,6 @@ public interface ProductService {
     List<Product> listAllProducts();
 
     Product getProductById(Integer id);
+
+    void saveOrUpdate(Product product);
 }

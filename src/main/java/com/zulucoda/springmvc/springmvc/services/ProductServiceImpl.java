@@ -30,7 +30,26 @@ public class ProductServiceImpl implements ProductService {
     public Product getProductById(Integer id){
         return this.products.get(id);
     }
-    
+
+    @Override
+    public void saveOrUpdate(Product product){
+        if (this.products.containsKey(product.getId())){
+            // update
+            this.products.replace(product.getId(), product);
+        } else {
+          // save
+          this.products.put(getNextKey(), product);
+        }
+    }
+
+    private Integer getNextKey(){
+        Product lastProduct = null;
+        for(Product product : this.products.values()){
+            lastProduct = product;
+        }
+        return lastProduct.getId() + 1;
+    }
+
     private void loadProducts(){
         this.products = new HashMap<>();
         
