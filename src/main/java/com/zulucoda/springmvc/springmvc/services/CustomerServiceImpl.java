@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 /***
  * Created by Muzikayise Flynn Buthelezi (zulucoda) on 2018/04/09
@@ -59,5 +60,20 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Customer getCustomerById(Integer id){
         return this.customers.get(id);
+    }
+
+    @Override
+    public void saveOrUpdate(Customer customer){
+        Integer nextKey = getNextKey();
+        customer.setId(nextKey);
+        this.customers.put(nextKey, customer);
+    }
+
+    private Integer getNextKey() {
+        Integer nextKey = 0;
+        for (Customer customer : this.customers.values()){
+            nextKey = customer.getId();
+        }
+        return nextKey + 1;
     }
 }
