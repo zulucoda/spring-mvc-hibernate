@@ -17,9 +17,9 @@
 <body>
 
     <div class="container">
-        <div class="col-3"><a href="/customers">View Alfa Romeo Customer</a></div>
-        <div class="col-1"> | </div>
-        <div class="col-3"><a href="/product/new">Add Product</a></div>
+        <div class="col-sm-3"><a href="/customers">View Alfa Romeo Customer</a></div>
+        <div class="col-sm-1"> | </div>
+        <div class="col-sm-3"><a href="/product/new">Add Product</a></div>
         <div th:if="${not #lists.isEmpty(products)}">
             <h2>Alfa Romeos Products</h2>
             <table class="table tables-stripped">

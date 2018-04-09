@@ -20,6 +20,9 @@
         <div class="row">
             <div class="col-sm-12"><h1>Alfa Romeo Customer Display</h1></div>
         </div>
+        <div class="row">
+            <div class="col-sm-12"><h3><a href="/customers">Back to Alfa Romeo Customers</a></h3></div>
+        </div>
 
         <form class="form" th:object="${customer}" th:action="@{/customer}" method="post">
             <input type="hidden" th:field="*{id}" />
