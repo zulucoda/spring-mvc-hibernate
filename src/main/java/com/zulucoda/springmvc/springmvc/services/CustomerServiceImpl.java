@@ -64,9 +64,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void saveOrUpdate(Customer customer){
-        Integer nextKey = getNextKey();
-        customer.setId(nextKey);
-        this.customers.put(nextKey, customer);
+        
+        if (customer.getId() != null && customer.getId() > 0){
+            this.customers.put(customer.getId(), customer);
+        }else {
+            Integer nextKey = getNextKey();
+            customer.setId(nextKey);
+            this.customers.put(nextKey, customer);
+        }
     }
 
     private Integer getNextKey() {

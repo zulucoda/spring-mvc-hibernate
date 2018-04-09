@@ -48,4 +48,10 @@ public class CustomerController {
         return "redirect:/customers";
     }
 
+    @RequestMapping("/customer/edit/{id}")
+    public String editCustomer(@PathVariable Integer id, Model mode){
+        mode.addAttribute("customer", customerService.getCustomerById(id));
+        return "/customerform";
+    }
+
 }
