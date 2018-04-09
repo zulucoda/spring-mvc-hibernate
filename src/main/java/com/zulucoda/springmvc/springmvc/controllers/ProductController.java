@@ -1,5 +1,6 @@
 package com.zulucoda.springmvc.springmvc.controllers;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.zulucoda.springmvc.springmvc.domain.Product;
 import com.zulucoda.springmvc.springmvc.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,10 +46,16 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public String saveProduct(Product product){
+    public String saveOrUpdateProduct(Product product){
         productService.saveOrUpdate(product);
 
         return "redirect:/products";
+    }
+
+    @RequestMapping("/product/edit/{id}")
+    public String editProduct(@PathVariable Integer id, Model model){
+        model.addAttribute("product", productService.getProductById(id));
+        return "productform";
     }
 
 }
