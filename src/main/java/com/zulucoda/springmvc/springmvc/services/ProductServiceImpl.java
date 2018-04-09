@@ -44,6 +44,14 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public void deleteProductById(Integer id){
+        if (this.products.containsKey(id)){
+            //delete existing product
+            this.products.remove(id);
+        }
+    }
+
     private Integer getNextKey(){
         Product lastProduct = null;
         for(Product product : this.products.values()){
