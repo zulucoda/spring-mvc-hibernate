@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zulucoda - Alfa Romeo Cars</title>
+
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"
+    />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-3"><a href="/products">View Alfa Romeo Products</a></div>
+        <div class="col-1">|</div>
+        <div class="col-3"><a href="/customer">Add Customer</a></div>
+        <div th:if="${not #lists.isEmpty(customers)}">
+            <h2>Alfa Romeos Customers</h2>
+            <table class="table tables-stripped">
+                <tr>
+                    <td>Id</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email Address</td>
+                    <td>City</td>
+                    <td>State</td>
+                    <td>Zip Code</td>
+                </tr>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.firstName}"></td>
+                    <td th:text="${customer.lastName}"></td>
+                    <td th:text="${customer.emailAddress}"></td>
+                    <td th:text="${customer.city}"></td>
+                    <td th:text="${customer.state}"></td>
+                    <td th:text="${customer.zipCode}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
