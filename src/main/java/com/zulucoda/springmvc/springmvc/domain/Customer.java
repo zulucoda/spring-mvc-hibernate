@@ -4,6 +4,7 @@ package com.zulucoda.springmvc.springmvc.domain;
  * Created by Muzikayise Flynn Buthelezi (zulucoda) on 2018/04/09
  */
 public class Customer {
+    private Integer id;
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -13,6 +14,13 @@ public class Customer {
     private String city;
     private String state;
     private String zipCode;
+
+    public void setId(Integer id){
+        this.id = id;
+    }
+    public Integer getId(){
+        return this.id;
+    }
 
     public void setFirstName(String firstName){
         this.firstName = firstName;
