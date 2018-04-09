@@ -31,6 +31,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer1.setEmailAddress("muzi@mfbproject.co.za");
         customer1.setAddressLineOne("Some Address Line One");
         customer1.setAddressLineTwo("Some Address Line Two");
+        customer1.setPhoneNumber("058 123 1234");
         customer1.setCity("Silicone Oasis");
         customer1.setState("Dubai");
         customer1.setZipCode("UAE480400");
@@ -43,6 +44,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer2.setEmailAddress("zulucoda@mfbproject.co.za");
         customer2.setAddressLineOne("Some Address Line One");
         customer2.setAddressLineTwo("Some Address Line Two");
+        customer2.setPhoneNumber("052 123 1234");
         customer2.setCity("International City");
         customer2.setState("Dubai");
         customer2.setZipCode("UAE380400");
@@ -52,5 +54,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<Customer> getAllCustomers() {
         return new ArrayList<>(this.customers.values());
+    }
+
+    @Override
+    public Customer getCustomerById(Integer id){
+        return this.customers.get(id);
     }
 }

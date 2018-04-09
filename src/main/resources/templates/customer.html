@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zulucoda - Alfa Romeo Cars</title>
+
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+
+    <link href="../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"
+    />
+
+</head>
+<body>
+
+ <div class="container">
+
+     <div class="header">
+         <h1>Alfa Romeo - Customer</h1>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>First Name:</label></div>
+         <div class="col-9"><strong th:text="${customer.firstName}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>Last Name:</label></div>
+         <div class="col-9"><strong th:text="${customer.lastName}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>Email Address:</label></div>
+         <div class="col-9"><strong th:text="${customer.emailAddress}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>Phone Number:</label></div>
+         <div class="col-9"><strong th:text="${customer.phoneNumber}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>Address Line One:</label></div>
+         <div class="col-9"><strong th:text="${customer.addressLineOne}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>Address Line Two:</label></div>
+         <div class="col-9"><strong th:text="${customer.addressLineTwo}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>City:</label></div>
+         <div class="col-9"><strong th:text="${customer.city}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>State:</label></div>
+         <div class="col-9"><strong th:text="${customer.state}"></strong></div>
+     </div>
+
+     <div class="row">
+         <div class="col-3"><label>Zip Code:</label></div>
+         <div class="col-9"><strong th:text="${customer.zipCode}"></strong></div>
+     </div>
+
+ </div>
+
+</body>
+</html>

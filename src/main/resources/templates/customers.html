@@ -31,6 +31,7 @@
                     <td>City</td>
                     <td>State</td>
                     <td>Zip Code</td>
+                    <td>View</td>
                 </tr>
                 <tr th:each="customer : ${customers}">
                     <td th:text="${customer.id}"></td>
@@ -40,6 +41,7 @@
                     <td th:text="${customer.city}"></td>
                     <td th:text="${customer.state}"></td>
                     <td th:text="${customer.zipCode}"></td>
+                    <td><a th:href="'/customer/' + ${customer.id}">view</a></td>
                 </tr>
             </table>
         </div>
