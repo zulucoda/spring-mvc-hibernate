@@ -21,14 +21,15 @@
             <div class="col-sm-12"><h1>Alfa Romeo Product Display</h1></div>
         </div>
 
-        <form>
+        <form class="form" th:object="${product}" th:action="@{/product}" method="post">
+            <input type="hidden" th:field="*{id}" />
 
             <div class="row">
                 <div class="col-sm-3">
                     <label>Description:</label>
                 </div>
                 <div class="col-sm-9">
-                    <input class="form-control" th:value="${product.description}">
+                    <input class="form-control" th:field="*{description}">
                 </div>
             </div>
             <div class="row">
@@ -36,7 +37,7 @@
                     <label>Price:</label>
                 </div>
                 <div class="col-sm-9">
-                    <input class="form-control" th:value="${product.price}">
+                    <input class="form-control" th:field="*{price}">
                 </div>
             </div>
             <div class="row">
@@ -44,7 +45,7 @@
                     <label>image url:</label>
                 </div>
                 <div class="col-sm-9">
-                    <input class="form-control" th:value="${product.imageUrl}">
+                    <input class="form-control" th:value="*{imageUrl}">
                 </div>
             </div>
 

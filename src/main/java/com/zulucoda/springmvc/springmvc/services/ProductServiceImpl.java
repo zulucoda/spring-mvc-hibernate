@@ -38,7 +38,9 @@ public class ProductServiceImpl implements ProductService {
             this.products.replace(product.getId(), product);
         } else {
           // save
-          this.products.put(getNextKey(), product);
+            int nextKey = getNextKey();
+            product.setId(nextKey);
+            this.products.put(nextKey, product);
         }
     }
 
