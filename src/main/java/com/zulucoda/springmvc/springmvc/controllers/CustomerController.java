@@ -1,5 +1,6 @@
 package com.zulucoda.springmvc.springmvc.controllers;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.zulucoda.springmvc.springmvc.domain.Customer;
 import com.zulucoda.springmvc.springmvc.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,12 @@ public class CustomerController {
     public String editCustomer(@PathVariable Integer id, Model mode){
         mode.addAttribute("customer", customerService.getCustomerById(id));
         return "/customerform";
+    }
+
+    @RequestMapping("/customer/delete/{id}")
+    public String deleteCustomer(@PathVariable Integer id){
+        customerService.deleteCustomerById(id);
+        return "redirect:/customers";
     }
 
 }

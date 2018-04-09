@@ -64,7 +64,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void saveOrUpdate(Customer customer){
-        
+
         if (customer.getId() != null && customer.getId() > 0){
             this.customers.put(customer.getId(), customer);
         }else {
@@ -72,6 +72,11 @@ public class CustomerServiceImpl implements CustomerService {
             customer.setId(nextKey);
             this.customers.put(nextKey, customer);
         }
+    }
+
+    @Override
+    public void deleteCustomerById(Integer id){
+        this.customers.remove(id);
     }
 
     private Integer getNextKey() {
